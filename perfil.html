@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container2">
+        <header class="header2">
+            <h1>Perfil do Usuário</h1>
+        </header>
+
+        <main class="main-content">
+            <div id="userProfile"></div>
+        </main>
+    </div>
+    <script>
+        const userProfile = document.getElementById('userProfile');
+
+        const userData = JSON.parse(localStorage.getItem('userData'));
+
+        if (userData) {
+
+            userProfile.innerHTML = `
+                <p><strong>Nome:</strong> ${userData.username}</p>
+                <p><strong>Email:</strong> ${userData.email}</p>
+                <p><strong>Telefone:</strong> ${userData.telefone}</p>
+                <p><strong>CPF:</strong> ${userData.cpf}</p>
+            `;
+        } else {
+            userProfile.innerHTML = '<p>Nenhum usuário cadastrado.</p>';
+        }
+    </script>
+</body>
+</html>
+
+</body>
+</html>
